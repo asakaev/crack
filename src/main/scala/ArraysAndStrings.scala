@@ -18,4 +18,10 @@ object ArraysAndStrings {
     occurrences(l) == occurrences(r)
   }
 
+  def urlify(s: String): String =
+    s.foldLeft("") {
+      case (s, c) if c == ' ' => s + "%20"
+      case (s, c)             => s + c
+    }
+
 }

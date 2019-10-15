@@ -12,4 +12,8 @@ object ArraysAndStringsSpecification extends Properties("ArraysAndStrings") {
     permutation(l, r) == (l.sorted == r.sorted)
   }
 
+  property("urlify") = forAll { s: String =>
+    urlify(s) == s.replace(" ", "%20")
+  }
+
 }
