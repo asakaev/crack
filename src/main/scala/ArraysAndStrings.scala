@@ -48,4 +48,11 @@ object ArraysAndStrings {
     }
   }
 
+  def rotateMatrix[A](m: Vector[Vector[A]]): Vector[Vector[A]] = ???
+
+  def zeroMatrix[A](m: Vector[Vector[A]]): Vector[Vector[A]] = ???
+
+  def stringRotation(l: String, r: String): Boolean =
+    (l + l).contains(r)
+
 }

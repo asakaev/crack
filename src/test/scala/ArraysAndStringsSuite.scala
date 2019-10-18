@@ -15,4 +15,10 @@ class ArraysAndStringsSuite extends FunSuite {
     assert(stringCompression("AABBBBC") == Right("A2B4C1"))
   }
 
+  test("stringRotation") {
+    assert(stringRotation("waterbottle", "erbottlewat"))
+    assert(stringRotation("ABCD", "CDAB"))
+    assert(!stringRotation("ABCD", "ACBD"))
+  }
+
 }
