@@ -28,4 +28,16 @@ object LinkedLists {
     go(as, Nil).reverse
   }
 
+  def deleteMiddleNode[A](as: List[A]): List[A] =
+    as.foldLeft(List.empty[(A, Int)] -> 0) {
+      case ((xs, idx), a) => ((a, idx) :: xs) -> (idx + 1)
+    } match {
+      case (_, n) if n <= 2 => as
+      case (xs, n) =>
+        xs.foldLeft(List.empty[A]) {
+          case (xs, (_, idx)) if idx == n / 2 => xs
+          case (xs, (a, _))                   => a :: xs
+        }
+    }
+
 }
